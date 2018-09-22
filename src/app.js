@@ -2,10 +2,25 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
+const token = require('./config/secret');
+
 const app = express();
 
 // Log requests to the console.
 app.use(logger('dev'));
+
+app.use((req, res, next) => {
+  const headerToken = req.header('token');
+  console.log(headerToken);
+  if (headerToken !== token) {
+    res.status(200)
+          .json({
+            status: 'error',
+            message: 'Wrong token',
+          });
+  }
+  next();
+});
 
 // bodyparser
 app.use(bodyParser.json());

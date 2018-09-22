@@ -5,3 +5,4 @@ flow-coverage
 .nyc_output
 coverage
 build
+src/config/secret.js

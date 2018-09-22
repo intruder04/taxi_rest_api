@@ -18,7 +18,7 @@ if (env !== 'production') {
 
 async function queryAny(query) {
   try {
-    const result = await db.any(query);
+    const result = await db.one(query);
     return result;
   } catch (err) {
     throw new Error(err);
