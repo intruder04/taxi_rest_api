@@ -1,0 +1,31 @@
+{
+  "name": "api",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/server.js"
+  },
+  "author": "viktor m",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^6.5.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "pg-promise": "^8.4.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-import-to-require": "^1.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.9.1",
+    "nodemon": "^1.17.4"
+  }
+}
