@@ -1,0 +1,18 @@
+{
+  "development": {
+    "db": {
+      "username": "perevoz",
+      "password": "perevoz",
+      "database": "perevoz_nn",
+      "host": "localhost",
+      "dialect": "postgres",
+      "port": 5432
+    },
+    "tables": {
+      "orders": "perevoz_order"
+    }
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL"
+  }
+}

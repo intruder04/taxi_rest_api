@@ -1,8 +1,8 @@
 const express = require('express');
-const event = require('../controllers');
+const order = require('../controllers/order');
 
 const router = express.Router();
 
-router.get('/events', event);
+router.get('/order/:id', order);
 
 module.exports = router;
