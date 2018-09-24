@@ -2,32 +2,22 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
-const token = require('./config/secret');
+const config = require('./config');
 
 const app = express();
 
 // Log requests to the console.
 app.use(logger('dev'));
 
-app.use((req, res, next) => {
-  const headerToken = req.header('token');
-  console.log(headerToken);
-  if (headerToken !== token) {
-    res.status(200)
-          .json({
-            status: 'error',
-            message: 'Wrong token',
-          });
-  }
-  next();
-});
+// auth middleware. Checks token in header
+app.use(require('./middlewares/auth'));
 
 // bodyparser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // routes
-app.use('/api/v1/', require('./routes'));
+app.use(config.api_path, require('./routes'));
 
 // If no route is matched by now, it must be a 404
 app.use((req, res, next) => {

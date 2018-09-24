@@ -2,7 +2,8 @@
     "extends": ["airbnb"],
     "rules": {
       "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
-      "max-len": ["error", { "ignoreComments": true, "code": 120 }]
+      "max-len": ["error", { "ignoreComments": true, "code": 120 }],
+      "linebreak-style": 0
     },
     "env": {
       "node": true,
